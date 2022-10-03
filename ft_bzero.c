@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 16:57:17 by aburnott          #+#    #+#             */
-/*   Updated: 2022/10/03 16:57:17 by aburnott         ###   ########.fr       */
+/*   Created: 2022/10/03 18:23:41 by aburnott          #+#    #+#             */
+/*   Updated: 2022/10/03 18:23:41 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stdlib.h>
+void	ft_bzero(void *s, size_t n)
+{
+	unsigned char	dest;
 
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-int		ft_isalnum(int c);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
-size_t	ft_strlen(const char *s);
-void	*ft_memset(void *s, int c, size_t n);
-void	ft_bzero(void *s, size_t n);
-void	*memcpy(void *dest, const void *src, size_t n);
-
-#endif
+	if (!s)
+		return (0);
+	dest = (unsigned char) s;
+	while (n > 0 && dest)
+	{
+		dest = '0';
+		dest++;
+		n--;
+	}
+	s = (void *)dest;
+	return (s);
+}
