@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 16:48:33 by aburnott          #+#    #+#             */
-/*   Updated: 2022/10/03 16:48:33 by aburnott         ###   ########.fr       */
+/*   Created: 2022/10/03 16:57:17 by aburnott          #+#    #+#             */
+/*   Updated: 2022/10/03 16:57:17 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBFT_H
+# define LIBFT_H
 
-int	ft_isdigit(int c)
-{
-	if (c >= 48 && c <= 57)
-		return (1);
-	return (0);
-}
+int	ft_isalpha(int c);
+int	ft_isdigit(int c);
+
+#endif
