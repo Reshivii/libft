@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 17:38:46 by aburnott          #+#    #+#             */
-/*   Updated: 2022/10/04 17:38:48 by aburnott         ###   ########.fr       */
+/*   Updated: 2022/10/05 21:06:30 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ int	ft_tolower(int c)
 		c += 32;
 		return (c);
 	}
-	return (0);
+	return (c);
 }

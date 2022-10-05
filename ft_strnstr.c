@@ -6,13 +6,13 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:03:58 by aburnott          #+#    #+#             */
-/*   Updated: 2022/10/05 17:33:35 by aburnott         ###   ########.fr       */
+/*   Updated: 2022/10/05 19:58:31 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strnstr(const char *s1, const char *s2, size_t n)
+char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
 	int	i;
 	int	j;

@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 13:32:15 by aburnott          #+#    #+#             */
-/*   Updated: 2022/10/05 17:05:52 by aburnott         ###   ########.fr       */
+/*   Updated: 2022/10/05 21:00:52 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned char	*cpy_s;
 
 	if (!s)
-		return (NULL);
+		return (0);
 	i = 0;
 	cpy_s = (unsigned char *)s;
 	while (i < n)
 	{
-		if (cpy_s[i] == c)
+		if (cpy_s[i] == (unsigned char)c)
 			return (&cpy_s[i]);
 		i++;
 	}
-	return (NULL);
+	return (0);
 }
