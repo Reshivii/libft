@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/04 17:38:46 by aburnott          #+#    #+#             */
-/*   Updated: 2022/10/04 17:38:48 by aburnott         ###   ########.fr       */
+/*   Created: 2022/10/05 13:32:15 by aburnott          #+#    #+#             */
+/*   Updated: 2022/10/05 13:32:15 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	if (c >= 65 && c <= 90)
+	int				i;
+	unsigned char	*cpy_s;
+
+	if (!s)
+		return ;
+	i = 0;
+	cpy_s = (unsigned char *)s;
+	while (i < n)
 	{
-		c += 32;
-		return (c);
+		if (cpy_s[i] == c)
+			return ;
+		i++;
 	}
-	return (0);
 }
