@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:03:58 by aburnott          #+#    #+#             */
-/*   Updated: 2022/10/05 14:03:58 by aburnott         ###   ########.fr       */
+/*   Updated: 2022/10/05 17:33:35 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*strnstr(const char *s1, const char *s2, size_t n)
 	int	j;
 
 	if (!s2)
-		return (s1);
+		return ((char *)s1);
 	i = 0;
 	while (s1[i])
 	{
@@ -26,7 +26,7 @@ char	*strnstr(const char *s1, const char *s2, size_t n)
 		while (s1[i + j] == s2[j] && s1[i + j] && n > 0)
 			j++;
 		if (s2[j] == '\0')
-			return (s1 + i);
+			return ((char *)s1 + i);
 		i++;
 		n--;
 	}

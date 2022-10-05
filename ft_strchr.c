@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 13:17:36 by aburnott          #+#    #+#             */
-/*   Updated: 2022/10/05 13:17:36 by aburnott         ###   ########.fr       */
+/*   Updated: 2022/10/05 17:31:36 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strchr(const char *s, int c)
 	while (s[i])
 	{
 		if (s[i] == c)
-			return (&s[i]);
+			return ((char *)s + i);
 		i++;
 	}
 	return (0);

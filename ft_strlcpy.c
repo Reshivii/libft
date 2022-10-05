@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 21:47:57 by aburnott          #+#    #+#             */
-/*   Updated: 2022/10/04 17:35:17 by aburnott         ###   ########.fr       */
+/*   Updated: 2022/10/05 17:33:08 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t n)
 
 	i = ft_strlen(src);
 	count = 0;
-	if (ft_strlcpy(dst, src, n) >= n)
-		return (-1);
+	if (!src)
+		return (0);
 	if (i + 1 < n)
 	{
 		count = -1;
