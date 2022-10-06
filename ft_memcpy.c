@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 18:36:04 by aburnott          #+#    #+#             */
-/*   Updated: 2022/10/05 20:15:01 by aburnott         ###   ########.fr       */
+/*   Updated: 2022/10/06 14:28:41 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	cpy_dest = (unsigned char *)dest;
 	cpy_src = (unsigned char *)src;
-	if (!src)
+	if (!dest && !src)
 		return (0);
 	i = 0;
 	while (i < n)

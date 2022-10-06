@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 18:01:01 by aburnott          #+#    #+#             */
-/*   Updated: 2022/10/05 19:58:21 by aburnott         ###   ########.fr       */
+/*   Updated: 2022/10/06 14:26:35 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ void	*ft_memset(void *s, int c, size_t n)
 
 	i = 0;
 	dest = (unsigned char *)s;
-	if (!s)
-		return (0);
 	while (i < n)
 	{
 		dest[i] = (unsigned char)c;

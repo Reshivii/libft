@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 18:23:41 by aburnott          #+#    #+#             */
-/*   Updated: 2022/10/05 20:04:05 by aburnott         ###   ########.fr       */
+/*   Updated: 2022/10/06 14:26:47 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*dest;
 
-	if (!s)
-		return ;
 	dest = (unsigned char *)s;
 	while (n > 0)
 	{

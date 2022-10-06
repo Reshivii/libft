@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 21:39:24 by aburnott          #+#    #+#             */
-/*   Updated: 2022/10/06 11:55:55 by aburnott         ###   ########.fr       */
+/*   Updated: 2022/10/06 14:29:47 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	*ft_memmove(void *dest, void *src, size_t n)
 
 	cpy_dest = (char *)dest;
 	cpy_src = (char *)src;
+	if (!dest && !src)
+		return (0);
 	i = 0;
 	if (cpy_src < cpy_dest)
 	{
