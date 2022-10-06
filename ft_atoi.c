@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:32:50 by aburnott          #+#    #+#             */
-/*   Updated: 2022/10/05 14:32:50 by aburnott         ###   ########.fr       */
+/*   Updated: 2022/10/06 12:27:07 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_atoi(const char *str)
 	i = 0;
 	sign = 1;
 	res = 0;
-	while (str[i] == ' ' || str[i] == '\t')
+	while (str[i] != '\0' && (str[i] >= 9 && str[i] <= 32))
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
