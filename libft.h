@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 16:57:17 by aburnott          #+#    #+#             */
-/*   Updated: 2022/10/06 12:38:25 by aburnott         ###   ########.fr       */
+/*   Updated: 2022/10/06 12:53:23 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n);
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t n_elm, size_t size);
 char	*ft_strdup(const char *s);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif
