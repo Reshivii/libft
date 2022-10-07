@@ -1,36 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 12:46:59 by aburnott          #+#    #+#             */
-/*   Updated: 2022/10/07 12:21:44 by aburnott         ###   ########.fr       */
+/*   Created: 2022/10/07 13:11:07 by aburnott          #+#    #+#             */
+/*   Updated: 2022/10/07 16:45:58 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+int	check_set(char c, char const *set)
 {
-	char	*sub;
 	size_t	i;
-	size_t	j;
 
-	if (!s)
-		return (0);
-	sub = malloc(sizeof(*sub) * len + 1);
-	if (!sub)
-		return (0);
-	i = start;
-	j = 0;
-	while (i < ft_strlen(s) && j < len)
+	i = 0;
+	while (set[i])
 	{
-		sub[j] = s[i];
+		if (c == set[i])
+			return (0);
 		i++;
-		j++;
 	}
-	sub[j] = '\0';
-	return (sub);
+	return (1);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	size_t	start;
+	size_t	end;
+	size_t	i;
+	char	*trim;
+
+	if (!s1)
+		return (0);
+	if (!set)
+		ft_strdup(s1);
+	while (!check_set(s1[i], set))
+		i++;
+	start = i;
+	while (check_set(s1[i], set))
+		i++;
+	end = i;
+	trim = ft_substr(s1, start, end - start);
+	return (trim);
 }
