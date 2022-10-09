@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 13:11:07 by aburnott          #+#    #+#             */
-/*   Updated: 2022/10/07 18:50:38 by aburnott         ###   ########.fr       */
+/*   Updated: 2022/10/09 12:51:20 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	check_set(char c, char const *set)
 	i = 0;
 	while (set[i])
 	{
-		if (c == set[i])
+		if (set[i] == c)
 			return (0);
 		i++;
 	}
@@ -30,19 +30,18 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	start;
 	size_t	end;
-	size_t	i;
 	char	*trim;
 
 	if (!s1)
 		return (0);
 	if (!set)
 		ft_strdup(s1);
-	while (!check_set(s1[i], set))
-		i++;
-	start = i;
-	while (check_set(s1[i], set))
-		i++;
-	end = i;
+	end = ft_strlen(s1);
+	start = 0;
+	while (s1[start] && !(check_set(s1[start], set)))
+		start++;
+	while (end > start && !(check_set(s1[end - 1], set)))
+		end--;
 	trim = ft_substr(s1, start, end - start);
 	return (trim);
 }
