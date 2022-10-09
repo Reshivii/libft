@@ -6,48 +6,34 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 12:54:04 by aburnott          #+#    #+#             */
-/*   Updated: 2022/10/09 12:54:28 by aburnott         ###   ########.fr       */
+/*   Updated: 2022/10/09 20:50:42 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	check_str(char c, char *charset)
-{
-	int	i;
-
-	i = 0;
-	while (charset[i])
-	{
-		if (charset[i] == c)
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
-int	ft_count(char *str, char *charset)
+int	ft_count(char const *s, char c)
 {
 	int	i;
 	int	count;
 
 	count = 0;
 	i = 0;
-	while (str[i])
+	while (s[i])
 	{
-		while (check_str(str[i], charset))
+		while (s[i] == c)
 			i++;
-		if (!check_str(str[i], charset) && str[i])
+		if ((s[i] != c) && s[i])
 		{
 			count++;
-			while (!check_str(str[i], charset) && str[i])
+			while (s[i] != c && s[i])
 				i++;
 		}
 	}
 	return (count + 1);
 }
 
-char	*word(int *j_int, char *str, char *charset)
+char	*word(int *j_int, char const *s, char c)
 {
 	int		len;
 	char	*buf;
@@ -55,16 +41,16 @@ char	*word(int *j_int, char *str, char *charset)
 
 	i = 0;
 	len = 0;
-	while (check_str(str[*j_int], charset))
+	while (s[*j_int] == c)
 		(*j_int)++;
-	while (!check_str(str[*j_int + len], charset) && str[*j_int + len])
+	while ((s[*j_int + len] != c) && s[*j_int + len])
 		len++;
 	buf = malloc((len + 1) * sizeof(*buf));
 	if (!buf)
 		return (NULL);
 	while (i < len)
 	{
-		buf[i] = str[*j_int];
+		buf[i] = s[*j_int];
 		i++;
 		*j_int = *j_int + 1;
 	}
@@ -72,7 +58,7 @@ char	*word(int *j_int, char *str, char *charset)
 	return (buf);
 }
 
-char	**ft_split(char *str, char *charset)
+char	**ft_split(char const *s, char c)
 {
 	char	**strings;
 	int		count;
@@ -81,13 +67,13 @@ char	**ft_split(char *str, char *charset)
 
 	i = 0;
 	j = 0;
-	count = ft_count(str, charset);
+	count = ft_count(s, c);
 	strings = malloc(count * sizeof(char *));
 	if (!strings)
 		return (NULL);
 	while (i < count - 1)
 	{
-		strings[i] = word(&j, str, charset);
+		strings[i] = word(&j, s, c);
 		i++;
 	}
 	strings[i] = 0;
