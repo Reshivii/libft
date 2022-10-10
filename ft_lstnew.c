@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 13:29:05 by aburnott          #+#    #+#             */
-/*   Updated: 2022/10/10 13:29:36 by aburnott         ###   ########.fr       */
+/*   Updated: 2022/10/10 21:56:11 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,12 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	
+	t_list	*ret;
+
+	ret = malloc(sizeof(*ret));
+	if (!ret)
+		return (0);
+	ret->content = content;
+	ret->next = 0;
+	return (ret);
 }

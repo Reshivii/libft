@@ -6,7 +6,7 @@
 #    By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/05 16:25:55 by aburnott          #+#    #+#              #
-#    Updated: 2022/10/10 18:10:52 by aburnott         ###   ########.fr        #
+#    Updated: 2022/10/10 21:57:58 by aburnott         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRCS = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 		ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
 		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
-B_SRCS = ft_lstnew_bonus.c
+B_SRCS = ft_lstnew.c
 
 OBJS = $(SRCS:.c=.o)
 
