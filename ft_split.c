@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 12:54:04 by aburnott          #+#    #+#             */
-/*   Updated: 2022/10/09 20:50:42 by aburnott         ###   ########.fr       */
+/*   Updated: 2022/10/10 11:07:24 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ char	**ft_split(char const *s, char c)
 	int		i;
 	int		j;
 
+	if (!s)
+		return (0);
 	i = 0;
 	j = 0;
 	count = ft_count(s, c);

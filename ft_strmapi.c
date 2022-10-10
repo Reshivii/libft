@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 19:32:55 by aburnott          #+#    #+#             */
-/*   Updated: 2022/10/10 11:09:02 by aburnott         ###   ########.fr       */
+/*   Created: 2022/10/10 11:07:49 by aburnott          #+#    #+#             */
+/*   Updated: 2022/10/10 11:47:51 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t n_elm, size_t size)
-{	
-	void	*ptr;
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	size_t	i;
+	char	*mappied;
 
-	ptr = malloc(n_elm * size);
-	if (!ptr)
+	if (!s)
 		return (0);
-	ft_bzero(ptr, n_elm);
-	return (ptr);
+	i = 0;
+	mappied = malloc(sizeof(*mappied) * (ft_strlen(s)) + 1);
+	if (!mappied)
+		return (0);
+	while (s[i])
+	{
+		mappied[i] = (*f)(i, s[i]);
+		i++;
+	}
+	mappied[i] = '\0';
+	return (mappied);
 }
