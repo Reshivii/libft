@@ -6,13 +6,13 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 20:58:01 by aburnott          #+#    #+#             */
-/*   Updated: 2022/10/10 21:50:59 by aburnott         ###   ########.fr       */
+/*   Updated: 2022/10/11 11:44:42 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	calc_len(int n)
+int	calc_len(long n)
 {
 	long	size;
 
@@ -25,10 +25,8 @@ int	calc_len(int n)
 	return (size);
 }
 
-void	convert(char *s, int len, int n, int isn)
+void	convert(char *s, int len, long n, int isn)
 {
-	s[len] = '\0';
-	len--;
 	while (len >= isn)
 	{
 		s[len] = (n % 10 + '0');
@@ -42,19 +40,24 @@ char	*ft_itoa(int n)
 	int		len;
 	char	*res;
 	int		is_negative;
+	long	ln;
 
+	ln = n;
 	is_negative = 0;
-	if (n < 0)
+	len = ln < 0;
+	if (ln < 0)
 	{
 		is_negative = 1;
-		n *= -1;
+		ln *= -1;
 	}
-	len = calc_len(n);
+	len += calc_len(ln);
 	res = malloc(sizeof(*res) * len + 1);
 	if (!res)
 		return (0);
 	if (is_negative)
 		res[0] = '-';
-	convert(res, len, n, is_negative);
+	res[len] = '\0';
+	len--;
+	convert(res, len, ln, is_negative);
 	return (res);
 }

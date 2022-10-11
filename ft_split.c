@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 12:54:04 by aburnott          #+#    #+#             */
-/*   Updated: 2022/10/10 11:07:24 by aburnott         ###   ########.fr       */
+/*   Updated: 2022/10/11 14:41:21 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char	*word(int *j_int, char const *s, char c)
 		len++;
 	buf = malloc((len + 1) * sizeof(*buf));
 	if (!buf)
-		return (NULL);
+		return (0);
 	while (i < len)
 	{
 		buf[i] = s[*j_int];
@@ -72,7 +72,7 @@ char	**ft_split(char const *s, char c)
 	count = ft_count(s, c);
 	strings = malloc(count * sizeof(char *));
 	if (!strings)
-		return (NULL);
+		return (0);
 	while (i < count - 1)
 	{
 		strings[i] = word(&j, s, c);
