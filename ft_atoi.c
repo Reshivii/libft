@@ -6,12 +6,11 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:32:50 by aburnott          #+#    #+#             */
-/*   Updated: 2022/10/11 14:12:21 by aburnott         ###   ########.fr       */
+/*   Updated: 2022/10/11 15:13:04 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 int	ft_atoi(const char *str)
 {
@@ -38,11 +37,4 @@ int	ft_atoi(const char *str)
 	else if (res > __LONG_MAX__ && sign == -1)
 		return (0);
 	return (sign * res);
-}
-
-int	main(int ac, char **av)
-{
-	(void)ac;
-	printf("%d\n", atoi(av[1]));
-	printf("%d\n", ft_atoi(av[1]));
 }
