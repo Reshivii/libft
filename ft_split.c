@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 12:54:04 by aburnott          #+#    #+#             */
-/*   Updated: 2022/10/11 18:32:15 by aburnott         ###   ########.fr       */
+/*   Updated: 2022/10/14 14:04:44 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,20 @@ char	*word(int *j_int, char const *s, char c)
 	return (buf);
 }
 
+char	**free_all(char **s, int limit)
+{
+	int	index;
+
+	index = 0;
+	while (index < limit)
+	{
+		free(s[index]);
+		index ++;
+	}
+	free(s);
+	return (0);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**strings;
@@ -76,6 +90,8 @@ char	**ft_split(char const *s, char c)
 	while (i < count - 1)
 	{
 		strings[i] = word(&j, s, c);
+		if (!strings[i])
+			return (free_all(strings, i));
 		i++;
 	}
 	strings[i] = 0;
