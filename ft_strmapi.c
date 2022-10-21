@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 11:07:49 by aburnott          #+#    #+#             */
-/*   Updated: 2022/10/10 11:47:51 by aburnott         ###   ########.fr       */
+/*   Updated: 2022/10/21 14:43:22 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	i;
 	char	*mappied;
 
-	if (!s)
+	if (!s || !f)
 		return (0);
 	i = 0;
 	mappied = malloc(sizeof(*mappied) * (ft_strlen(s)) + 1);
