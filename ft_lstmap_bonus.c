@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 15:39:14 by aburnott          #+#    #+#             */
-/*   Updated: 2022/10/11 18:29:29 by aburnott         ###   ########.fr       */
+/*   Updated: 2022/10/28 15:19:34 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*tab;
 	t_list	*tmp;
 
-	if (!lst || !f)
+	if (!lst || !f || !del)
 		return (0);
 	new = ft_lstnew(f(lst->content));
 	if (!new)
